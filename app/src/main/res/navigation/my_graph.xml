@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/data_list_main">
+
+    <fragment
+        android:id="@+id/data_list_main"
+        android:name="com.eren.artbookfragment.fragment.First_DataList_Fragment"
+        android:label="fragment_data_list_main"
+        tools:layout="@layout/fragment_data_list_main" >
+        <action
+            android:id="@+id/action_data_list_main_to_data_add"
+            app:destination="@id/data_add" />
+    </fragment>
+    <fragment
+        android:id="@+id/data_add"
+        android:name="com.eren.artbookfragment.fragment.Second_DataAdd_Fragment"
+        android:label="fragment_data_add"
+        tools:layout="@layout/fragment_data_add" >
+        <action
+            android:id="@+id/action_data_add_to_data_list_main"
+            app:destination="@id/data_list_main" />
+        <argument
+            android:name="numberSecond"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="aboutSecond"
+            app:argType="string" />
+    </fragment>
+</navigation>
